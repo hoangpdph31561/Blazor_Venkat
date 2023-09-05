@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33829.357
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SelfLearn_Blazor_kudvenkat", "SelfLearn_Blazor_kudvenkat\SelfLearn_Blazor_kudvenkat.csproj", "{8C7A2A2B-CDE4-4F27-8BD4-5175EA43E3A1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeeManagerment.Web", "EmployeeManagerment.Web\EmployeeManagerment.Web.csproj", "{A278F8BA-A7E9-4A1C-9738-6AF107DBABAF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8C7A2A2B-CDE4-4F27-8BD4-5175EA43E3A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C7A2A2B-CDE4-4F27-8BD4-5175EA43E3A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C7A2A2B-CDE4-4F27-8BD4-5175EA43E3A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C7A2A2B-CDE4-4F27-8BD4-5175EA43E3A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A278F8BA-A7E9-4A1C-9738-6AF107DBABAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A278F8BA-A7E9-4A1C-9738-6AF107DBABAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A278F8BA-A7E9-4A1C-9738-6AF107DBABAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A278F8BA-A7E9-4A1C-9738-6AF107DBABAF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A59C16FC-FC4B-40DB-9B8E-9EAE8E678A74}
+	EndGlobalSection
+EndGlobal
