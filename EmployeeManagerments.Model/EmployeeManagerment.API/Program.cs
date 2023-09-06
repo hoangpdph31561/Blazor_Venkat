@@ -1,3 +1,4 @@
+using EmployeeManagerment.API.Catalog.Employee;
 using EmployeeManagerment.API.DBContext;
 using Microsoft.EntityFrameworkCore;
 
@@ -11,6 +12,7 @@ builder.Services.AddDbContext<EmployeeManagermentDBContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("MyDB"));
 });
+builder.Services.AddScoped<IEmployeeRepository, EmployeeRespository>();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
