@@ -21,11 +21,7 @@ namespace EmployeeManagerment.Web.Pages
                 Email = "hoang23577@gmai.com",
                 Gender = SelfLearn_Blazor_kudvenkat.Enum.Gender.Male,
                 PhotoPath = "images/z4588458814052_472230aad824892dcc3c25f7e6fddfbc.jpg",
-                Deparment = new Deparment()
-                {
-                    DeparmentId = 1,
-                    DeparmentName = "C#"
-                }
+                DeparmentId = 1,
 
             };
             Employee e2 = new Employee()
@@ -37,11 +33,7 @@ namespace EmployeeManagerment.Web.Pages
                 Email = "hoang23577@gmai.com",
                 Gender = SelfLearn_Blazor_kudvenkat.Enum.Gender.Female,
                 PhotoPath = "images/z4588461449146_87d4cb5c0761f68b6be7686c0ed5ae85.jpg",
-                Deparment = new Deparment()
-                {
-                    DeparmentId = 2,
-                    DeparmentName = "Java"
-                }
+                DeparmentId = 1,
 
             };
             Employee e3 = new Employee()
@@ -53,11 +45,7 @@ namespace EmployeeManagerment.Web.Pages
                 Email = "hoang23577@gmai.com",
                 Gender = SelfLearn_Blazor_kudvenkat.Enum.Gender.Female,
                 PhotoPath = "images/Picture1.png",
-                Deparment = new Deparment()
-                {
-                    DeparmentId = 1,
-                    DeparmentName = "C#"
-                }
+                DeparmentId = 1
 
             };
             Employees = new List<Employee>() { e1, e2 ,e3};
