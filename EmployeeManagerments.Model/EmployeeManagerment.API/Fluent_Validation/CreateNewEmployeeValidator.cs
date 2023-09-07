@@ -1,0 +1,18 @@
+﻿using EmployeeManagerment.API.Request;
+using FluentValidation;
+
+namespace EmployeeManagerment.API.Fluent_Validation
+{
+    public class CreateNewEmployeeValidator : AbstractValidator<EmployeeRequest>
+    {
+        public CreateNewEmployeeValidator()
+        {
+            RuleFor(x => x.FirstName).NotEmpty().WithMessage("FirstName is needed to be fill").MaximumLength(200).WithMessage("too long").Matches(@"^[\w\s\D]+$").WithMessage("FirstNamr regex wrong");
+            RuleFor(x => x.LastName).NotEmpty().WithMessage("LastName is needed to be fill").MaximumLength(200).WithMessage("too long").Matches(@"^[\w\s\D]$").WithMessage("LastName regex wrong");
+            RuleFor(x => x.Email).NotEmpty().WithMessage("Email is required")
+                .Matches(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$")
+                .WithMessage("Email format not match");
+            RuleFor(x => x.DateOfBirth).GreaterThan(DateTime.Now.AddYears(-100)).WithMessage("Birthday cannot greater than 100 years");
+        }
+    }
+}

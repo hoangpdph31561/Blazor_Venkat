@@ -55,6 +55,10 @@ namespace EmployeeManagerment.API.Controllers
         {
             try
             {
+                if(!ModelState.IsValid)
+                {
+                    return BadRequest(ModelState);
+                }
                 var result = await employeeRepository.AddNewEmployee(request);
                 if(result == null)
                 {
@@ -73,6 +77,10 @@ namespace EmployeeManagerment.API.Controllers
         {
             try
             {
+                if (!ModelState.IsValid)
+                {
+                    return BadRequest(ModelState);
+                }
                 var result = await employeeRepository.UpdateEmployee(id, request);
                 if (result == null)
                 {
