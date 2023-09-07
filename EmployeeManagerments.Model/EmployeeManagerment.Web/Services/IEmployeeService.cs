@@ -5,5 +5,6 @@ namespace EmployeeManagerment.Web.Services
     public interface IEmployeeService
     {
         Task<List<Employee>> GetEmployee();
+        Task<Employee> GetEmployeeById(int id);
     }
 }

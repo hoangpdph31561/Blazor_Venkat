@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SelfLearn_Blazor_kudvenkat"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmployeeManagerment.Web", "EmployeeManagerment.Web\EmployeeManagerment.Web.csproj", "{A278F8BA-A7E9-4A1C-9738-6AF107DBABAF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeeManagerment.API", "EmployeeManagerment.API\EmployeeManagerment.API.csproj", "{A20CEA70-3683-4C06-B56B-EACFC3CA8193}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmployeeManagerment.API", "EmployeeManagerment.API\EmployeeManagerment.API.csproj", "{A20CEA70-3683-4C06-B56B-EACFC3CA8193}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
