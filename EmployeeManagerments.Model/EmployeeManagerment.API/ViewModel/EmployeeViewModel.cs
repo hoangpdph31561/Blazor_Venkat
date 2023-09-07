@@ -12,5 +12,6 @@ namespace EmployeeManagerment.API.ViewModel
         public Gender Gender { get; set; }
         public int DeparmentId { get; set; }
         public string PhotoPath { get; set; }
+        public string DeparmentName { get; set; }
     }
 }

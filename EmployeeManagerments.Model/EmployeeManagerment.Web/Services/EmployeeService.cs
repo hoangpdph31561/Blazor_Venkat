@@ -1,4 +1,5 @@
-﻿using SelfLearn_Blazor_kudvenkat.Entities;
+﻿using EmployeeManagerment.API.ViewModel;
+using SelfLearn_Blazor_kudvenkat.Entities;
 
 namespace EmployeeManagerment.Web.Services
 {
@@ -9,14 +10,14 @@ namespace EmployeeManagerment.Web.Services
         {
             _httpClient = httpClient;
         }
-        public async Task<List<Employee>> GetEmployee()
+        public async Task<List<EmployeeViewModel>> GetEmployee()
         {
-            return await _httpClient.GetFromJsonAsync<List<Employee>>("api/employees");
+            return await _httpClient.GetFromJsonAsync<List<EmployeeViewModel>>("api/employees");
         }
 
-        public async Task<Employee> GetEmployeeById(int id)
+        public async Task<EmployeeViewModel> GetEmployeeById(int id)
         {
-            return await _httpClient.GetFromJsonAsync<Employee>($"api/employees/{id}");
+            return await _httpClient.GetFromJsonAsync<EmployeeViewModel>($"api/employees/{id}");
         }
     }
 }

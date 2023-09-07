@@ -61,7 +61,7 @@ namespace EmployeeManagerment.API.Catalog.Employee
 
         public async Task<EmployeeViewModel> GetEmployeeById(int id)
         {
-            var result = await _dbContext.Employees.FirstOrDefaultAsync(x => x.EmployeeId == id);
+            var result = await _dbContext.Employees.Include(x => x.Deparment).FirstOrDefaultAsync(x => x.EmployeeId == id);
             if (result == null)
             {
                 return null;
@@ -76,6 +76,7 @@ namespace EmployeeManagerment.API.Catalog.Employee
                 Gender = result.Gender,
                 DeparmentId = result.DeparmentId,
                 PhotoPath = result.PhotoPath,
+                DeparmentName = result.Deparment.DeparmentName
             };
             return finalResult;
         }
