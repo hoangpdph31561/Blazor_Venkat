@@ -1,0 +1,15 @@
+﻿@page "/databidingdemo"
+<h3>Databiding</h3>
+<h4>Đây là cách 1 sử dụng onchange</h4>
+<p><b>Name: </b> @(Gender == 0 ? "Mr" : "Ms") @Name</p>
+<b>Name: </b> <input value="@Name" @onchange ="@(e => {Name = e.Value.ToString();})" />
+<hr />
+<h4>Đây là cách 2 sử dụng binding khi chuột không focus sẽ ngay lập tức đổi tên</h4>
+<b>Name: </b>
+<input @bind="Name" />
+<hr />
+<h4>Đây là cách 3 sử dụng biding khi đổi tên chưa cần focus ra ngoài sẽ đổi ngay</h4>
+<b>Name: </b>
+<input @bind="Name" @bind:event ="oninput" />
+
+

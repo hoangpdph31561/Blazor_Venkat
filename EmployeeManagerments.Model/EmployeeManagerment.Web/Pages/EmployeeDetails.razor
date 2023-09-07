@@ -10,7 +10,7 @@ else
         <div class="col-sm-8">
             <div class="card">
                 <div class="card-header">
-                    <h4>@Employee.FirstName @Employee.LastName @ToaDo</h4>
+                    <h4>@(Employee.Gender == 0 ? "Mr" : "Mrs") @Employee.FirstName @Employee.LastName @ToaDo</h4>
                 </div>
                 <div class="card-body text-center">
                     <img class="card-img-top" src="@Employee.PhotoPath" @onmousemove ="@GetToaDo"/>
@@ -19,7 +19,9 @@ else
                     <p>DepartmentID: @Employee.DeparmentId</p>
                     <p>DeparmentName: @Employee.DeparmentName</p>
                 </div>
-                <button class="btn btn-primary" @onclick="@HideButtonClick">@ButtonName</button>
+                <div class="card-footer text-center">
+                    <button class="btn btn-primary" @onclick="@HideButtonClick">@ButtonName</button>
+                </div>
                 <div class="card-footer text-center @CssClass">
                     <a href="/" class="btn btn-primary">Back</a>
                     <a href="#" class="btn btn-primary">Edit</a>
