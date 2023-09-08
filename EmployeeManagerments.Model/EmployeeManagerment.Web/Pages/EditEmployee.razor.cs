@@ -7,6 +7,9 @@ namespace EmployeeManagerment.Web.Pages
     public partial class EditEmployee
     {
         [Inject]
+        public IDeparmentService DeparmentService { get; set; }
+        public List<DeparmentViewModel> Deparments { get; set; } = new List<DeparmentViewModel>();
+        [Inject]
         public IEmployeeService EmployeeService { get; set; }
         public EmployeeViewModel  Employee { get; set; } = new EmployeeViewModel();
         [Parameter]
@@ -14,6 +17,7 @@ namespace EmployeeManagerment.Web.Pages
         protected async override Task OnInitializedAsync()
         {
             Employee = await EmployeeService.GetEmployeeById(Convert.ToInt32(Id));
+            Deparments = await DeparmentService.GetDeparments();
         }
     }
 }

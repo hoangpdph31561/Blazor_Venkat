@@ -12,7 +12,10 @@ builder.Services.AddHttpClient<IEmployeeService, EmployeeService>(client =>
 {
     client.BaseAddress = new Uri("https://localhost:7216/");
 });
-
+builder.Services.AddHttpClient<IDeparmentService, DeparmentService>(client =>
+{
+    client.BaseAddress = new Uri("https://localhost:7216/");
+});
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

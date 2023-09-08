@@ -1,4 +1,5 @@
-﻿using EmployeeManagerment.API.Catalog.Employee;
+﻿using EmployeeManagerment.API.Catalog.Deparment;
+using EmployeeManagerment.API.Catalog.Employee;
 using EmployeeManagerment.API.DBContext;
 using EmployeeManagerment.API.Fluent_Validation;
 using EmployeeManagerment.API.Request;
@@ -18,6 +19,7 @@ builder.Services.AddDbContext<EmployeeManagermentDBContext>(options =>
 });
 
 builder.Services.AddScoped<IEmployeeRepository, EmployeeRespository>();
+builder.Services.AddScoped<IDeparmentRespository, DeparmentRespository>();
 builder.Services.AddScoped<IValidator<EmployeeRequest>, CreateNewEmployeeValidator>();
 //câu quan trọng
 builder.Services.AddControllers().AddFluentValidation();
