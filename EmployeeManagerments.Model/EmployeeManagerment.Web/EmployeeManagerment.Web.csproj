@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Blazored.FluentValidation" Version="2.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\EmployeeManagerment.API\EmployeeManagerment.API.csproj" />
     <ProjectReference Include="..\SelfLearn_Blazor_kudvenkat\SelfLearn_Blazor_kudvenkat.csproj" />
   </ItemGroup>

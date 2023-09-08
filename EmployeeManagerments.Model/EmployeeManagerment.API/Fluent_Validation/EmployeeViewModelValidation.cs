@@ -1,11 +1,11 @@
-﻿using EmployeeManagerment.API.Request;
+﻿using EmployeeManagerment.API.ViewModel;
 using FluentValidation;
 
 namespace EmployeeManagerment.API.Fluent_Validation
 {
-    public class CreateNewEmployeeValidator : AbstractValidator<EmployeeRequest>
+    public class EmployeeViewModelValidation : AbstractValidator<EmployeeViewModel>
     {
-        public CreateNewEmployeeValidator()
+        public EmployeeViewModelValidation()
         {
             RuleFor(x => x.FirstName).NotEmpty().WithMessage("FirstName is needed to be fill").MinimumLength(2).WithMessage("Too short").MaximumLength(200).WithMessage("too long").Matches(@"^[\w\s\D]+$").WithMessage("FirstNamr regex wrong");
             RuleFor(x => x.LastName).NotEmpty().WithMessage("LastName is needed to be fill").MinimumLength(2).WithMessage("Too short").MaximumLength(200).WithMessage("too long").Matches(@"^[\w\D]+$").WithMessage("LastName regex wrong");

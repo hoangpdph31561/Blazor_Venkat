@@ -1,6 +1,8 @@
-﻿using EmployeeManagerment.API.ViewModel;
+﻿using EmployeeManagerment.API.Request;
+using EmployeeManagerment.API.ViewModel;
 using EmployeeManagerment.Web.Services;
 using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Components.Forms;
 
 namespace EmployeeManagerment.Web.Pages
 {
@@ -9,6 +11,8 @@ namespace EmployeeManagerment.Web.Pages
         [Inject]
         public IDeparmentService DeparmentService { get; set; }
         public List<DeparmentViewModel> Deparments { get; set; } = new List<DeparmentViewModel>();
+        public EmployeeRequest UpdateEmployeeRequest { get; set; } = new EmployeeRequest();
+        public int Result { get; set; }
         [Inject]
         public IEmployeeService EmployeeService { get; set; }
         public EmployeeViewModel  Employee { get; set; } = new EmployeeViewModel();
@@ -20,6 +24,19 @@ namespace EmployeeManagerment.Web.Pages
             Employee = await EmployeeService.GetEmployeeById(Convert.ToInt32(Id));
             Deparments = await DeparmentService.GetDeparments();
             DeparmentId = Employee.DeparmentId.ToString();
+            UpdateEmployeeRequest.FirstName = Employee.FirstName;
+            UpdateEmployeeRequest.LastName = Employee.LastName;
+            UpdateEmployeeRequest.Email = Employee.Email;
+            UpdateEmployeeRequest.Gender = Employee.Gender;
+            UpdateEmployeeRequest.DeparmentId = Employee.DeparmentId;
+            UpdateEmployeeRequest.DateOfBirth = Employee.DateOfBirth;
+            UpdateEmployeeRequest.PhotoPath = Employee.PhotoPath;
+        }
+        protected async Task UpdateEmployee(EditContext context)
+        {
+
+            Result = await EmployeeService.UpdateEmployee(Convert.ToInt32(Id), UpdateEmployeeRequest);
+            
         }
     }
 }

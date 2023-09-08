@@ -1,5 +1,7 @@
-﻿using EmployeeManagerment.API.ViewModel;
+﻿using EmployeeManagerment.API.Request;
+using EmployeeManagerment.API.ViewModel;
 using SelfLearn_Blazor_kudvenkat.Entities;
+using System.Net.Http.Json;
 
 namespace EmployeeManagerment.Web.Services
 {
@@ -19,5 +21,13 @@ namespace EmployeeManagerment.Web.Services
         {
             return await _httpClient.GetFromJsonAsync<EmployeeViewModel>($"api/employees/{id}");
         }
+
+        public async Task<int> UpdateEmployee(int id, EmployeeRequest request)
+        {
+            var result = await _httpClient.PutAsJsonAsync($"api/employees/{id}", request);
+            return (int)result.StatusCode;
+        }
+
+        
     }
 }

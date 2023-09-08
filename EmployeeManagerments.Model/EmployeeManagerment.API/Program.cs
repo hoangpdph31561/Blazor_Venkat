@@ -3,6 +3,7 @@ using EmployeeManagerment.API.Catalog.Employee;
 using EmployeeManagerment.API.DBContext;
 using EmployeeManagerment.API.Fluent_Validation;
 using EmployeeManagerment.API.Request;
+using EmployeeManagerment.API.ViewModel;
 using FluentValidation;
 using FluentValidation.AspNetCore;
 using Microsoft.EntityFrameworkCore;
@@ -21,6 +22,7 @@ builder.Services.AddDbContext<EmployeeManagermentDBContext>(options =>
 builder.Services.AddScoped<IEmployeeRepository, EmployeeRespository>();
 builder.Services.AddScoped<IDeparmentRespository, DeparmentRespository>();
 builder.Services.AddScoped<IValidator<EmployeeRequest>, CreateNewEmployeeValidator>();
+builder.Services.AddScoped<IValidator<EmployeeViewModel>, EmployeeViewModelValidation>();
 //câu quan trọng
 builder.Services.AddControllers().AddFluentValidation();
 builder.Services.AddEndpointsApiExplorer();

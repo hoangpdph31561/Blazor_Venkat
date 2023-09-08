@@ -73,7 +73,7 @@ namespace EmployeeManagerment.API.Controllers
             }
         }
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateEmployee(int id, [FromForm]EmployeeRequest request)
+        public async Task<IActionResult> UpdateEmployee(int id, [FromBody]EmployeeRequest request)
         {
             try
             {
