@@ -12,12 +12,14 @@ namespace EmployeeManagerment.Web.Pages
         [Inject]
         public IEmployeeService EmployeeService { get; set; }
         public EmployeeViewModel  Employee { get; set; } = new EmployeeViewModel();
+        public string DeparmentId { get; set; }
         [Parameter]
         public string Id { get; set; }
         protected async override Task OnInitializedAsync()
         {
             Employee = await EmployeeService.GetEmployeeById(Convert.ToInt32(Id));
             Deparments = await DeparmentService.GetDeparments();
+            DeparmentId = Employee.DeparmentId.ToString();
         }
     }
 }
