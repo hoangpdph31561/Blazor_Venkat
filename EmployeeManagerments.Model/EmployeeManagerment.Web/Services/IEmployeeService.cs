@@ -8,6 +8,7 @@ namespace EmployeeManagerment.Web.Services
     {
         Task<List<EmployeeViewModel>> GetEmployee();
         Task<EmployeeViewModel> GetEmployeeById(int id);
-        Task<int> UpdateEmployee(int id, EmployeeRequest request);
+        Task<bool> UpdateEmployee(int id, EmployeeRequest request);
+        Task<string> CreateNewEmployee(EmployeeRequest request);
     }
 }

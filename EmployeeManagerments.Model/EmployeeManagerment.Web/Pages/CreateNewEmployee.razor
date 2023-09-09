@@ -1,0 +1,66 @@
+﻿@page "/createnewemployee"
+@using Blazored.FluentValidation
+<h3>Create New Employee</h3>
+
+<EditForm Model="NewEmployee" OnValidSubmit="CreateEmployee">
+    <FluentValidationValidator />
+    <ValidationSummary/>
+    <div class="form-group form-row">
+        <label for="firstName" class="col-sm-2 col-form-label">Firstname:</label>
+        <div class="col-sm-10">
+            <InputText id="firstName" class="form-control" placeholder="First Name" @bind-Value="@NewEmployee.FirstName">
+
+            </InputText>
+            <ValidationMessage For="@(() => NewEmployee.FirstName)" />
+        </div>
+    </div>
+    <div class="form-group form-row">
+        <label for="lastName" class="col-sm-2 col-form-label">Lastname:</label>
+        <div class="col-sm-10">
+            <InputText id="lastName" class="form-control" placeholder="Last Name" @bind-Value="@NewEmployee.LastName">
+
+            </InputText>
+            <ValidationMessage For="@(() => NewEmployee.LastName)" />
+        </div>
+    </div>
+    <div class="form-group form-row">
+        <label for="email" class="col-sm-2 col-form-label">Email:</label>
+        <div class="col-sm-10">
+            <InputText id="email" class="form-control" placeholder="Email" @bind-Value="@NewEmployee.Email">
+
+            </InputText>
+            <ValidationMessage For="@(() => NewEmployee.Email)" />
+        </div>
+    </div>
+    <div class="form-group form-row">
+        <label for="deparment" class="col-sm-2 col-form-label">Deparment:</label>
+        <div class="col-sm-10">
+            <InputSelect id="deparment" class="form-control" @bind-Value="@NewEmployee.DeparmentId">
+                @foreach (var item in Deparments)
+                {
+                    <option value="@item.DeparmentId">@item.DeparmentName</option>
+                }
+            </InputSelect>
+        </div>
+    </div>
+    <div class="form-group form-row">
+        <label for="gender" class="col-sm-2 col-form-label">Gender:</label>
+        <div class="col-sm-10">
+            <InputSelect id="gender" class="form-control" @bind-Value="@NewEmployee.Gender">
+                @foreach (var item in Enum.GetValues(typeof(Gender)))
+                {
+                    <option value="@item">@item</option>
+                }
+            </InputSelect>
+        </div>
+    </div>
+    <div class="form-group form-row">
+        <label for="dateofbirst" class="col-sm-2 col-form-label">Date of birth:</label>
+        <div class="col-sm-10">
+            <InputDate @bind-Value="@NewEmployee.DateOfBirth"></InputDate>
+            <ValidationMessage For="@(() => NewEmployee.DateOfBirth)" />
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Create new</button>
+</EditForm>
+<h4 style="color: red;">@Result</h4>

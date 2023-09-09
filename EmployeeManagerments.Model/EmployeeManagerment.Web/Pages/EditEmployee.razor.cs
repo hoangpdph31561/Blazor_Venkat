@@ -12,7 +12,7 @@ namespace EmployeeManagerment.Web.Pages
         public IDeparmentService DeparmentService { get; set; }
         public List<DeparmentViewModel> Deparments { get; set; } = new List<DeparmentViewModel>();
         public EmployeeRequest UpdateEmployeeRequest { get; set; } = new EmployeeRequest();
-        public int Result { get; set; }
+        public string Result { get; set; }
         [Inject]
         public IEmployeeService EmployeeService { get; set; }
         public EmployeeViewModel  Employee { get; set; } = new EmployeeViewModel();
@@ -35,8 +35,15 @@ namespace EmployeeManagerment.Web.Pages
         protected async Task UpdateEmployee(EditContext context)
         {
 
-            Result = await EmployeeService.UpdateEmployee(Convert.ToInt32(Id), UpdateEmployeeRequest);
-            
+            var result = await EmployeeService.UpdateEmployee(Convert.ToInt32(Id), UpdateEmployeeRequest);
+            if(result)
+            {
+                Result = "Update successfully";
+            }
+            else
+            {
+                Result = "Update fail";
+            }
         }
     }
 }

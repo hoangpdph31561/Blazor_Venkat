@@ -51,7 +51,7 @@ namespace EmployeeManagerment.API.Controllers
             }
         }
         [HttpPost]
-        public async Task<IActionResult> CreatNewEmployee([FromForm]EmployeeRequest request)
+        public async Task<IActionResult> CreatNewEmployee([FromBody]EmployeeRequest request)
         {
             try
             {
