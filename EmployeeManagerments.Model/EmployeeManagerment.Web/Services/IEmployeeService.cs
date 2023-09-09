@@ -10,5 +10,6 @@ namespace EmployeeManagerment.Web.Services
         Task<EmployeeViewModel> GetEmployeeById(int id);
         Task<bool> UpdateEmployee(int id, EmployeeRequest request);
         Task<string> CreateNewEmployee(EmployeeRequest request);
+        Task DeleteEmployee(int id);
     }
 }

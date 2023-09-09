@@ -9,6 +9,8 @@ namespace EmployeeManagerment.Web.Pages
     public partial class EditEmployee
     {
         [Inject]
+        public NavigationManager NavigationManager { get; set; }
+        [Inject]
         public IDeparmentService DeparmentService { get; set; }
         public List<DeparmentViewModel> Deparments { get; set; } = new List<DeparmentViewModel>();
         public EmployeeRequest UpdateEmployeeRequest { get; set; } = new EmployeeRequest();
@@ -44,6 +46,11 @@ namespace EmployeeManagerment.Web.Pages
             {
                 Result = "Update fail";
             }
+        }
+        protected async Task DeleteEmployee()
+        {
+            await EmployeeService.DeleteEmployee(Employee.EmployeeId);
+            NavigationManager.NavigateTo("/");
         }
     }
 }

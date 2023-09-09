@@ -9,6 +9,8 @@ namespace EmployeeManagerment.Web.Pages
     public partial class CreateNewEmployee
     {
         [Inject]
+        public NavigationManager NavigationManager { get; set; }
+        [Inject]
         public IEmployeeService EmployeeService { get; set; }
         [Inject]
         public IDeparmentService DeparmentService { get; set; }
@@ -25,6 +27,8 @@ namespace EmployeeManagerment.Web.Pages
         {
             var result = await EmployeeService.CreateNewEmployee(NewEmployee);
             Result = result;
+            System.Threading.Thread.Sleep(3000);
+            NavigationManager.NavigateTo("/");
         }
     }
 }
