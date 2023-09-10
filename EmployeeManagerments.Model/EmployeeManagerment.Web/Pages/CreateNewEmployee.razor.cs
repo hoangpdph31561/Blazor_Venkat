@@ -27,7 +27,6 @@ namespace EmployeeManagerment.Web.Pages
         {
             var result = await EmployeeService.CreateNewEmployee(NewEmployee);
             Result = result;
-            System.Threading.Thread.Sleep(3000);
             NavigationManager.NavigateTo("/");
         }
     }

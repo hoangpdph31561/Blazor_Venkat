@@ -8,6 +8,7 @@ namespace EmployeeManagerment.Web.Pages
 {
     public partial class EditEmployee
     {
+        
         [Inject]
         public NavigationManager NavigationManager { get; set; }
         [Inject]

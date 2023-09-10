@@ -10,6 +10,7 @@ namespace EmployeeManagerment.Web.Pages
         [Inject]
         public IEmployeeService employeeService { get; set; }
         public IEnumerable<EmployeeViewModel> Employees { get; set; }
+        public bool ShowFooter { get; set; } = true;
         protected override async Task OnInitializedAsync()
         {
             Employees = await employeeService.GetEmployee();
