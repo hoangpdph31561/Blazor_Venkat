@@ -11,7 +11,7 @@ else
     <div class="card-group">
         @foreach (var item in Employees)
         {
-           <DisplayEmployee Employee="item" ShowFooter= "ShowFooter"></DisplayEmployee>
+           <DisplayEmployee Employee="item" ShowFooter= "ShowFooter" OnEmployeeDeleted="EmployeeDeleted"></DisplayEmployee>
         }
     </div>
 }

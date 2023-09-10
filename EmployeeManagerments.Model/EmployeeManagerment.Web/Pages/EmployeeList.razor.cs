@@ -15,6 +15,10 @@ namespace EmployeeManagerment.Web.Pages
         {
             Employees = await employeeService.GetEmployee();
         }
+        protected async Task EmployeeDeleted()
+        {
+            Employees = await employeeService.GetEmployee();
+        }
         
     }
 }
