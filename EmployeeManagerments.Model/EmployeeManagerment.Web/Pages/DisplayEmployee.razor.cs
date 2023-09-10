@@ -1,6 +1,7 @@
 ﻿using EmployeeManagerment.API.ViewModel;
 using EmployeeManagerment.Web.Services;
 using Microsoft.AspNetCore.Components;
+using Re_Useable_web_razor;
 using SelfLearn_Blazor_kudvenkat.Entities;
 
 namespace EmployeeManagerment.Web.Pages
@@ -15,10 +16,18 @@ namespace EmployeeManagerment.Web.Pages
         public EmployeeViewModel Employee { get; set; }
         [Parameter]
         public bool ShowFooter { get; set; }
-        protected async Task Delete_Click()
+        protected DeleteConfirm DeleteConfirm { get; set; }
+        protected void Delete_Click()
         {
-            await EmployeeService.DeleteEmployee(Employee.EmployeeId);
-            await OnEmployeeDeleted.InvokeAsync(Employee.EmployeeId);
+            DeleteConfirm.Show();
+        }
+        protected async Task Confirm_DeleteClick(bool deleteConfirm)
+        {
+            if(deleteConfirm)
+            {
+                await EmployeeService.DeleteEmployee(Employee.EmployeeId);
+                await OnEmployeeDeleted.InvokeAsync(Employee.EmployeeId);
+            }
         }
     }
 }

@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\EmployeeManagerment.API\EmployeeManagerment.API.csproj" />
+    <ProjectReference Include="..\Re-Useable_web_razor\Re-Useable_web_razor.csproj" />
     <ProjectReference Include="..\SelfLearn_Blazor_kudvenkat\SelfLearn_Blazor_kudvenkat.csproj" />
   </ItemGroup>
 

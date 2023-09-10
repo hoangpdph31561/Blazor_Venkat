@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmployeeManagerment.Web", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmployeeManagerment.API", "EmployeeManagerment.API\EmployeeManagerment.API.csproj", "{A20CEA70-3683-4C06-B56B-EACFC3CA8193}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Re-Useable_web_razor", "Re-Useable_web_razor\Re-Useable_web_razor.csproj", "{95A5EEB1-4CCC-49D3-BF76-2E6879387BC1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{A20CEA70-3683-4C06-B56B-EACFC3CA8193}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A20CEA70-3683-4C06-B56B-EACFC3CA8193}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A20CEA70-3683-4C06-B56B-EACFC3CA8193}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95A5EEB1-4CCC-49D3-BF76-2E6879387BC1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95A5EEB1-4CCC-49D3-BF76-2E6879387BC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95A5EEB1-4CCC-49D3-BF76-2E6879387BC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95A5EEB1-4CCC-49D3-BF76-2E6879387BC1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
